@@ -89,7 +89,7 @@ fun VoiceToTextApp(speechRecognizer: SpeechRecognizer) {
         }
 
 if (!isListening) {
-  val intent
+  val intent = Intent(RecognizerIntent
   putExtra(
 
 
