@@ -51,4 +51,52 @@ fun VoiceToTextApp(speechRecognizer: SpeechRecognizer) {
              recognizedText = matches[0]
            }
        }
-       override fun onEvent(eventType: Int, params: Bundle?)
+       override fun onEvent(eventType: Int, params: Bundle?) {}
+       }
+       speechRecognizer.setRecognitionListener(listener)
+       
+      onDispose{
+     speechRecognizer.setRecognitionListener(null)
+      }
+     }
+
+     Scaffold {
+      topbar = {
+        TopAppbar(title = { Text ("Voice To Text App")})
+      }
+      ) { padding ->
+        Column(
+          modifier = Modifier
+            .padding(padding)
+            .padding(16.dp)
+           fillMaxSize(),
+          verticalArrangement = Arrangement.Top
+          ) {
+       Text (
+        text = if
+       style = MaterialTheme.typography.h6,
+      modifier = Modifier
+      .fillMaxWidth()
+      .weight(1f)
+      .padding(8.dp)
+      )
+
+      Button(
+        onClick = {
+          if (!permissionGranted)
+             permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+             return@Button
+        }
+
+if (!isListening) {
+  val intent
+  putExtra(
+
+
+
+
+
+
+
+
+         
