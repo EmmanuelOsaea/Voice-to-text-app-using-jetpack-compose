@@ -91,11 +91,28 @@ fun VoiceToTextApp(speechRecognizer: SpeechRecognizer) {
 if (!isListening) {
   val intent = Intent(RecognizerIntent
   putExtra(
-
-
-
-
-
+Intent(
+  RecognizerIntent
+  RecognizerIntent   
+       )
+ putExtra (RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
+    }
+speechRecognizer.startListening(intent)
+is Listening = true
+    } else {
+      speechRecognizer.stopListening()
+      isListening = false
+    }
+    },
+    modifier = Modifier.fillMaxWidth()
+    ) {
+ Text(if (isListening) "Stop Listening" else "Start listening")
+  }
+                      }
+                      }
+                      }
+ 
+    
 
 
 
